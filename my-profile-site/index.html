@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chloe Lim - 풀스택 개발자</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dark-mode {
+            color-scheme: dark;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-slate-900 transition-colors duration-300">
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full bg-white dark:bg-slate-800 shadow-sm z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">C</span>
+                    </div>
+                    <span class="font-bold text-lg text-gray-900 dark:text-white">Chloe</span>
+                </div>
+
+                <!-- Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">소개</a>
+                    <a href="#skills" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">기술</a>
+                    <a href="#projects" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">프로젝트</a>
+                    <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition">연락처</a>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button id="darkModeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600 transition">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                        안녕하세요,<br><span class="gradient-text">Chloe Lim</span>입니다.
+                    </h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                        창의적이고 효율적인 웹 솔루션을 만드는 개발자입니다.
+                        사용자 경험과 기술 우수성 모두를 추구합니다.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition transform hover:scale-105">
+                            연락하기
+                        </a>
+                        <a href="#projects" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-slate-700 transition">
+                            작품 보기
+                        </a>
+                    </div>
+                </div>
+
+                <div class="fade-in" style="animation-delay: 0.2s;">
+                    <div class="relative w-64 h-64 mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-600 rounded-3xl transform rotate-6"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl flex items-center justify-center text-6xl">
+                            <i class="fas fa-code text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">소개</h2>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="card-hover bg-gray-50 dark:bg-slate-700 p-8 rounded-2xl transition-colors">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">개발</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        클린하고 효율적인 코드 작성을 중시합니다. 사용자 중심의 솔루션을 개발합니다.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gray-50 dark:bg-slate-700 p-8 rounded-2xl transition-colors">
+                    <div class="text-4xl text-purple-600 mb-4">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">디자인</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        모던하고 직관적인 UI/UX를 추구합니다. 사용자 경험이 최우선입니다.
+                    </p>
+                </div>
+
+                <div class="card-hover bg-gray-50 dark:bg-slate-700 p-8 rounded-2xl transition-colors">
+                    <div class="text-4xl text-indigo-600 mb-4">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">성장</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        지속적인 학습과 개선을 통해 더 나은 개발자가 되기 위해 노력합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">기술 스택</h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Frontend -->
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-orange-500 mb-4">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">HTML5</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">마크업</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-blue-500 mb-4">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">CSS3</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">스타일링</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-yellow-500 mb-4">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">JavaScript</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">상호작용</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-cyan-500 mb-4">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">React</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">프론트엔드</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-green-600 mb-4">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Node.js</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">백엔드</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-blue-700 mb-4">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Git</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">버전관리</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-purple-600 mb-4">
+                        <i class="fab fa-database"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">MongoDB</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">데이터베이스</p>
+                </div>
+
+                <div class="skill-card card-hover bg-white dark:bg-slate-800 p-6 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-sky-500 mb-4">
+                        <i class="fas fa-window-restore"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white">Tailwind</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">CSS 프레임워크</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-800 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-12 text-center">프로젝트</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="card-hover bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden transition-colors">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-6xl text-white">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">E-commerce 플랫폼</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            React와 Node.js로 만든 풀스택 전자상거래 플랫폼. 결제 시스템과 관리자 패널을 포함합니다.
+                        </p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">Node.js</span>
+                            <span class="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">MongoDB</span>
+                        </div>
+                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">GitHub 보기 →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card-hover bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden transition-colors">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-6xl text-white">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Task 관리 앱</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            React Hook과 LocalStorage를 활용한 개인 할일 관리 앱. 드래그 앤 드롭 기능 포함.
+                        </p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 px-3 py-1 rounded-full">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">GitHub 보기 →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card-hover bg-gray-50 dark:bg-slate-700 rounded-2xl overflow-hidden transition-colors">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center text-6xl text-white">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">날씨 앱</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">
+                            공공 날씨 API를 활용한 실시간 날씨 조회 애플리케이션. 지역 검색 및 즐겨찾기 기능.
+                        </p>
+                        <div class="flex gap-2 mb-4 flex-wrap">
+                            <span class="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs bg-sky-100 dark:bg-sky-900 text-sky-800 dark:text-sky-200 px-3 py-1 rounded-full">API</span>
+                        </div>
+                        <a href="#" class="text-blue-600 dark:text-blue-400 font-semibold hover:underline">GitHub 보기 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-slate-900 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">연락처</h2>
+            <p class="text-gray-600 dark:text-gray-400 text-center mb-12">
+                새로운 기회와 협업에 항상 열려있습니다. 편하게 연락주세요!
+            </p>
+
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <a href="mailto:tngud43@gmail.com" class="card-hover bg-white dark:bg-slate-800 p-8 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-red-500 mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">이메일</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 break-all">tngud43@gmail.com</p>
+                </a>
+
+                <a href="https://github.com" target="_blank" class="card-hover bg-white dark:bg-slate-800 p-8 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-gray-900 dark:text-white mb-4">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">GitHub</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">내 저장소 보기</p>
+                </a>
+
+                <a href="https://linkedin.com" target="_blank" class="card-hover bg-white dark:bg-slate-800 p-8 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-blue-600 mb-4">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">LinkedIn</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">프로필 방문</p>
+                </a>
+
+                <a href="#" class="card-hover bg-white dark:bg-slate-800 p-8 rounded-2xl text-center transition-colors">
+                    <div class="text-4xl text-pink-500 mb-4">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 dark:text-white mb-2">Twitter</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">팔로우하기</p>
+                </a>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white">
+                <h3 class="text-2xl font-bold mb-4">함께 무언가 만들어봅시다</h3>
+                <p class="mb-6 opacity-90">좋은 아이디어가 있으신가요? 바로 연락주세요!</p>
+                <a href="mailto:tngud43@gmail.com" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    메시지 보내기
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-black text-gray-400 py-12 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="font-semibold text-white">Chloe Lim</p>
+                    <p class="text-sm">풀스택 웹 개발자</p>
+                </div>
+
+                <div class="flex gap-6 mb-6 md:mb-0">
+                    <a href="#" class="hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                </div>
+
+                <p class="text-sm">© 2024 Chloe Lim. 모든 권리 보유.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 다크모드 토글
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            const isNowDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('darkMode', isNowDark);
+            darkModeToggle.innerHTML = isNowDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // 초기 아이콘 설정
+        darkModeToggle.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+
+        // 스크롤 애니메이션
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-in';
+                }
+            });
+        });
+
+        document.querySelectorAll('.card-hover').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

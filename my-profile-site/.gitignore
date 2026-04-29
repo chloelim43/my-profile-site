@@ -1,0 +1,23 @@
+# 운영 체제
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# 환경 변수
+.env
+.env.local
+
+# 로그 파일
+*.log
+
+# 의존성
+node_modules/
+package-lock.json
