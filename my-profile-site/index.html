@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chloe Lim | Front-End Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white">
+
+  <!-- 네비게이션 바 -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm transition-all duration-300">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="flex justify-between items-center h-16">
+        <!-- 로고 -->
+        <div class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          CL
+        </div>
+
+        <!-- 데스크톱 메뉴 -->
+        <div class="hidden md:flex gap-8">
+          <a href="#about" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">About</a>
+          <a href="#skills" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Skills</a>
+          <a href="#projects" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Projects</a>
+          <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
+        </div>
+
+        <!-- 모바일 햄버거 버튼 -->
+        <button id="menuToggle" class="md:hidden flex flex-col gap-1 cursor-pointer">
+          <span class="w-6 h-0.5 bg-gray-700"></span>
+          <span class="w-6 h-0.5 bg-gray-700"></span>
+          <span class="w-6 h-0.5 bg-gray-700"></span>
+        </button>
+      </div>
+
+      <!-- 모바일 드롭다운 메뉴 -->
+      <div id="mobileMenu" class="hidden flex-col bg-white border-t border-gray-200 pb-4">
+        <a href="#about" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">About</a>
+        <a href="#skills" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Skills</a>
+        <a href="#projects" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Projects</a>
+        <a href="#contact" class="block px-4 py-2 text-gray-700 hover:bg-gray-50">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero 섹션 -->
+  <section id="hero" class="min-h-screen flex items-center justify-center pt-16">
+    <div class="container mx-auto px-4 max-w-6xl text-center">
+      <p class="text-lg md:text-xl text-blue-600 font-semibold mb-4">Hello, I'm</p>
+      <h1 class="text-6xl md:text-8xl font-bold mb-4 gradient-text">Chloe Lim</h1>
+      <div class="text-2xl md:text-4xl text-gray-700 font-semibold mb-8">
+        <span id="heroRole" class="typing-cursor">Front-End Developer</span>
+      </div>
+      <p class="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
+        Passionate front-end developer with a love for creating beautiful, accessible web experiences. Focused on performance and clean code.
+      </p>
+
+      <!-- CTA 버튼 -->
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="#projects" class="px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-300 font-semibold">
+          View Projects
+        </a>
+        <a href="#contact" class="px-8 py-4 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 font-semibold">
+          Contact Me
+        </a>
+      </div>
+
+      <!-- 스크롤 인디케이터 -->
+      <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <svg class="w-6 h-6 text-blue-600 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- About 섹션 -->
+  <section id="about" class="py-20 bg-white section-fade">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">About Me</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- 아바타 플레이스홀더 -->
+        <div class="flex justify-center">
+          <div class="w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center shadow-2xl">
+            <span class="text-white text-6xl font-bold">CL</span>
+          </div>
+        </div>
+
+        <!-- 소개 텍스트 -->
+        <div>
+          <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+            I'm a front-end developer with 3+ years of experience building responsive, user-focused web applications. I believe in the power of clean code, intuitive design, and continuous learning.
+          </p>
+          <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+            When I'm not coding, you can find me exploring new design trends, contributing to open source, or experimenting with emerging web technologies.
+          </p>
+
+          <!-- 통계 배지 -->
+          <div class="flex flex-wrap gap-4">
+            <div class="px-6 py-3 bg-blue-100 rounded-lg">
+              <div class="text-2xl font-bold text-blue-600">3+</div>
+              <div class="text-sm text-gray-600">Years Experience</div>
+            </div>
+            <div class="px-6 py-3 bg-indigo-100 rounded-lg">
+              <div class="text-2xl font-bold text-indigo-600">10+</div>
+              <div class="text-sm text-gray-600">Projects</div>
+            </div>
+            <div class="px-6 py-3 bg-purple-100 rounded-lg">
+              <div class="text-2xl font-bold text-purple-600">8</div>
+              <div class="text-sm text-gray-600">Technologies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills 섹션 -->
+  <section id="skills" class="py-20 bg-gray-50 section-fade">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Skills & Technologies</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- HTML5 -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">🌐</div>
+          <h3 class="font-semibold text-gray-900 mb-2">HTML5</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="90%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">90%</span>
+        </div>
+
+        <!-- CSS3 -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">🎨</div>
+          <h3 class="font-semibold text-gray-900 mb-2">CSS3</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="85%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">85%</span>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">⚡</div>
+          <h3 class="font-semibold text-gray-900 mb-2">JavaScript</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="85%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">85%</span>
+        </div>
+
+        <!-- React -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">⚛️</div>
+          <h3 class="font-semibold text-gray-900 mb-2">React</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="80%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">80%</span>
+        </div>
+
+        <!-- TypeScript -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">📘</div>
+          <h3 class="font-semibold text-gray-900 mb-2">TypeScript</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="75%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">75%</span>
+        </div>
+
+        <!-- Node.js -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">🟢</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Node.js</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="70%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">70%</span>
+        </div>
+
+        <!-- Git -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">📦</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Git</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="85%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">85%</span>
+        </div>
+
+        <!-- Tailwind CSS -->
+        <div class="skill-card bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <div class="text-4xl mb-3">💨</div>
+          <h3 class="font-semibold text-gray-900 mb-2">Tailwind CSS</h3>
+          <div class="bg-gray-200 rounded-full h-2 overflow-hidden">
+            <div class="skill-bar" data-width="80%"></div>
+          </div>
+          <span class="text-sm text-gray-600 mt-2 block">80%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects 섹션 -->
+  <section id="projects" class="py-20 bg-white section-fade">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">My Projects</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1: Profile Website -->
+        <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="h-48 bg-gradient-to-br from-blue-400 to-indigo-600 flex items-center justify-center">
+            <span class="text-white text-5xl">🌐</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Profile Website</h3>
+            <p class="text-gray-600 mb-4">A modern, responsive portfolio website built with HTML5, CSS3, and Tailwind CSS. Features smooth scrolling animations and mobile-first design.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">HTML5</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">CSS3</span>
+              <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">Tailwind CSS</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 transition-colors font-semibold">
+                View
+              </a>
+              <a href="#" class="flex-1 px-4 py-2 border border-blue-600 text-blue-600 rounded-lg text-center hover:bg-blue-50 transition-colors font-semibold">
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Bucket List App -->
+        <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-600 flex items-center justify-center">
+            <span class="text-white text-5xl">✓</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Bucket List App</h3>
+            <p class="text-gray-600 mb-4">An interactive task management application with localStorage persistence. Features include filtering, editing, and progress tracking with smooth animations.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">JavaScript</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">Tailwind CSS</span>
+              <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">LocalStorage</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 transition-colors font-semibold">
+                View
+              </a>
+              <a href="#" class="flex-1 px-4 py-2 border border-blue-600 text-blue-600 rounded-lg text-center hover:bg-blue-50 transition-colors font-semibold">
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Todo Dashboard -->
+        <div class="project-card bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+          <div class="h-48 bg-gradient-to-br from-green-400 to-teal-600 flex items-center justify-center">
+            <span class="text-white text-5xl">📊</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Todo Dashboard</h3>
+            <p class="text-gray-600 mb-4">A comprehensive task dashboard built with React and TypeScript. Includes real-time statistics, advanced filtering, and beautiful data visualizations.</p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">React</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">TypeScript</span>
+              <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Chart.js</span>
+            </div>
+            <div class="flex gap-3">
+              <a href="#" class="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg text-center hover:bg-blue-700 transition-colors font-semibold">
+                View
+              </a>
+              <a href="#" class="flex-1 px-4 py-2 border border-blue-600 text-blue-600 rounded-lg text-center hover:bg-blue-50 transition-colors font-semibold">
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact 섹션 -->
+  <section id="contact" class="py-20 bg-gray-50 section-fade">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">Get In Touch</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- 연락처 정보 -->
+        <div>
+          <h3 class="text-2xl font-bold text-gray-900 mb-8">Let's connect</h3>
+          <p class="text-lg text-gray-600 mb-8">Feel free to reach out to me through any of these channels. I'm always interested in hearing about new projects and opportunities.</p>
+
+          <!-- 이메일 -->
+          <div class="mb-6">
+            <a href="mailto:tngud43@gmail.com" class="flex items-center gap-4 px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all">
+              <span class="text-2xl">📧</span>
+              <div>
+                <div class="text-sm text-gray-600">Email</div>
+                <div class="font-semibold">tngud43@gmail.com</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- GitHub -->
+          <div class="mb-6">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all">
+              <span class="text-2xl">🐙</span>
+              <div>
+                <div class="text-sm text-gray-600">GitHub</div>
+                <div class="font-semibold">github.com/chloelim</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- LinkedIn -->
+          <div class="mb-6">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 px-6 py-4 border-2 border-gray-300 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all">
+              <span class="text-2xl">💼</span>
+              <div>
+                <div class="text-sm text-gray-600">LinkedIn</div>
+                <div class="font-semibold">linkedin.com/in/chloelim</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- 연락처 폼 -->
+        <div>
+          <form id="contactForm" class="bg-white rounded-xl shadow-lg p-8">
+            <div class="mb-6">
+              <label for="contactName" class="block text-sm font-semibold text-gray-900 mb-2">Name</label>
+              <input
+                type="text"
+                id="contactName"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Your name"
+              >
+            </div>
+
+            <div class="mb-6">
+              <label for="contactEmail" class="block text-sm font-semibold text-gray-900 mb-2">Email</label>
+              <input
+                type="email"
+                id="contactEmail"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="your.email@example.com"
+              >
+            </div>
+
+            <div class="mb-6">
+              <label for="contactMessage" class="block text-sm font-semibold text-gray-900 mb-2">Message</label>
+              <textarea
+                id="contactMessage"
+                rows="5"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Your message here..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold text-lg"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="container mx-auto px-4 max-w-6xl text-center">
+      <p class="text-gray-300">© 2026 Chloe Lim. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    class ProfileApp {
+      constructor() {
+        this.init();
+      }
+
+      init() {
+        this.cacheElements();
+        this.bindEvents();
+        this.initScrollAnimations();
+        this.initTypingEffect();
+        this.initNavHighlight();
+      }
+
+      cacheElements() {
+        this.navbar = document.getElementById('navbar');
+        this.menuToggle = document.getElementById('menuToggle');
+        this.mobileMenu = document.getElementById('mobileMenu');
+        this.heroRole = document.getElementById('heroRole');
+        this.sections = document.querySelectorAll('.section-fade');
+        this.skillBars = document.querySelectorAll('.skill-bar');
+        this.contactForm = document.getElementById('contactForm');
+        this.contactName = document.getElementById('contactName');
+        this.contactEmail = document.getElementById('contactEmail');
+        this.contactMessage = document.getElementById('contactMessage');
+        this.navLinks = document.querySelectorAll('.nav-link');
+      }
+
+      bindEvents() {
+        // 모바일 메뉴 토글
+        this.menuToggle.addEventListener('click', () => {
+          this.mobileMenu.classList.toggle('hidden');
+          this.mobileMenu.classList.toggle('flex');
+        });
+
+        // 네비게이션 링크 클릭 (스무스 스크롤 + 모바일 메뉴 닫기)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(anchor.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+              this.mobileMenu.classList.add('hidden');
+              this.mobileMenu.classList.remove('flex');
+            }
+          });
+        });
+
+        // 윈도우 스크롤 이벤트 (네비게이션 스타일)
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 50) {
+            this.navbar.classList.add('scrolled');
+          } else {
+            this.navbar.classList.remove('scrolled');
+          }
+        });
+
+        // 연락처 폼 제출
+        this.contactForm.addEventListener('submit', (e) => this.handleContactSubmit(e));
+      }
+
+      initScrollAnimations() {
+        // Intersection Observer로 스크롤 애니메이션 처리
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+
+              // 스킬 바인 경우 프로그레스 바 애니메이션
+              if (entry.target.classList.contains('skill-bar')) {
+                const width = entry.target.dataset.width;
+                entry.target.style.width = width;
+              }
+
+              // 한 번만 발동
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        this.sections.forEach(el => observer.observe(el));
+        this.skillBars.forEach(el => observer.observe(el));
+      }
+
+      initTypingEffect() {
+        const roles = ['Front-End Developer', 'UI/UX Enthusiast', 'Clean Code Advocate'];
+        let currentRoleIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+
+        const type = () => {
+          const currentRole = roles[currentRoleIndex];
+
+          if (isDeleting) {
+            this.heroRole.textContent = currentRole.substring(0, currentCharIndex - 1);
+            currentCharIndex--;
+          } else {
+            this.heroRole.textContent = currentRole.substring(0, currentCharIndex + 1);
+            currentCharIndex++;
+          }
+
+          // 타이핑 완료 시
+          if (!isDeleting && currentCharIndex === currentRole.length) {
+            isDeleting = true;
+            setTimeout(type, 1500); // 1.5초 대기
+            return;
+          }
+
+          // 삭제 완료 시
+          if (isDeleting && currentCharIndex === 0) {
+            isDeleting = false;
+            currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+            setTimeout(type, 500);
+            return;
+          }
+
+          setTimeout(type, isDeleting ? 50 : 100);
+        };
+
+        type();
+      }
+
+      initNavHighlight() {
+        // 각 섹션의 위치를 감시하여 현재 섹션에 맞는 nav 링크를 활성화
+        const sectionObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              // 모든 nav 링크에서 active 클래스 제거
+              this.navLinks.forEach(link => link.classList.remove('text-blue-600', 'font-bold'));
+
+              // 현재 섹션에 해당하는 nav 링크에 active 클래스 추가
+              const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+              if (activeLink) {
+                activeLink.classList.add('text-blue-600', 'font-bold');
+              }
+            }
+          });
+        }, { threshold: 0.3 });
+
+        // hero 섹션은 nav 링크가 없으므로 제외
+        this.sections.forEach(section => {
+          if (section.id !== 'hero') {
+            sectionObserver.observe(section);
+          }
+        });
+      }
+
+      handleContactSubmit(e) {
+        e.preventDefault();
+
+        const name = this.contactName.value.trim();
+        const email = this.contactEmail.value.trim();
+        const message = this.contactMessage.value.trim();
+
+        // 유효성 검사
+        if (!name || !email || !message) {
+          alert('모든 필드를 입력해주세요.');
+          return;
+        }
+
+        if (!this.isValidEmail(email)) {
+          alert('유효한 이메일 주소를 입력해주세요.');
+          return;
+        }
+
+        // 성공 메시지 표시
+        const successMessage = `<div class="text-center">
+          <div class="text-5xl mb-4">✓</div>
+          <h3 class="text-2xl font-bold text-green-600 mb-2">Thank you!</h3>
+          <p class="text-gray-600 mb-6">Your message has been sent successfully.</p>
+          <button onclick="location.reload()" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            Send Another
+          </button>
+        </div>`;
+
+        this.contactForm.innerHTML = successMessage;
+      }
+
+      isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    }
+
+    // DOM 로드 완료 후 앱 시작
+    document.addEventListener('DOMContentLoaded', () => {
+      new ProfileApp();
+    });
+  </script>
+
+</body>
+</html>
